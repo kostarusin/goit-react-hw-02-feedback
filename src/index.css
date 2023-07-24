@@ -19,17 +19,17 @@ code {
 }
 
 
-.formStyle {
+.buttonWrap {
   display: flex;
   gap: 30px;
 }
 
 
-.inputStyle {
+.button {
   width: 120px;
 }
 
-.statStyle {
-  font-size: x-large;
-  font-weight: 700;
+.notificationMsg {
+  font-size: medium;
+  font-weight: 500;
 }

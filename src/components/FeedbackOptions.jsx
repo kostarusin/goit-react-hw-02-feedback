@@ -1,48 +1,30 @@
+import PropTypes from 'prop-types';
 
-import React, { Component } from 'react';
+export const FeedbackOptions = ({onLeaveFeedback, options}) => {
+   
 
-export class FeedbackOptions extends Component {
-  countTotalFeedback = () => {
-    const { good, neutral, bad } = this.props.options;
-    return good + neutral + bad;
-  };
-
-  countPositiveFeedbackPercentage = () => {
-    const { good } = this.props.options;
-    const total = this.countTotalFeedback();
-    return total === 0 ? 0 : Math.round((good / total) * 100);
-  };
-
-  render() {
-    const { options, onLeaveFeedback } = this.props;
-    const { good, neutral, bad } = options;
-    const total = this.countTotalFeedback();
-    const positivePercentage = this.countPositiveFeedbackPercentage();
-
-    return (
-      <form className="formStyle">
-        <input
+      return (
+      <div className="buttonWrap">
+        {options.map(option => {return <button
+          key={option}
           type="button"
-          name="good"
-          value="Good"
-          className="inputStyle"
+          name={option}
+          className="button"
           onClick={onLeaveFeedback}
-        />
-        <input
-          type="button"
-          name="neutral"
-          value="Neutral"
-          className="inputStyle"
-          onClick={onLeaveFeedback}
-        />
-        <input
-          type="button"
-          name="bad"
-          value="Bad"
-          className="inputStyle"
-          onClick={onLeaveFeedback}
-        />
-      </form>
+        >{option}</button>})}
+      </div>
     );
   }
-}
+
+  FeedbackOptions.prototyps = {
+    onLeaveFeedback: PropTypes.func.isRequired, 
+    options: PropTypes.objectOf(
+      PropTypes.shape({
+        good: PropTypes.number.isRequired,
+        neutral: PropTypes.number.isRequired,
+        bad: PropTypes.number.isRequired,
+         })
+    ).isRequired,
+  }
+
+
