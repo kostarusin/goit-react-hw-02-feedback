@@ -18,24 +18,9 @@ code {
   padding: 20px;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
 
 
-.buttonWrap {
-  display: flex;
-  gap: 30px;
-}
 
 
-.button {
-  width: 116px;
-  text-transform: capitalize;
-}
 
-.notificationMsg {
-  font-size: medium;
-  font-weight: 500;
-}
+

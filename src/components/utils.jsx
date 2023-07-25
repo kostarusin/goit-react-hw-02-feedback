@@ -12,15 +12,12 @@ export const countPositiveFeedbackPercentage = options => {
   return total === 0 ? 0 : Math.round((good / total) * 100);
 };
 
-
 countTotalFeedback.prototyps = {
-        options: PropTypes.objectOf(
-      PropTypes.shape({
-        good: PropTypes.number.isRequired,
-        neutral: PropTypes.number.isRequired,
-        bad: PropTypes.number.isRequired,
-         })
-    ).isRequired,
-  }
-
-
+  options: PropTypes.objectOf(
+    PropTypes.shape({
+      good: PropTypes.number.isRequired,
+      neutral: PropTypes.number.isRequired,
+      bad: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};
