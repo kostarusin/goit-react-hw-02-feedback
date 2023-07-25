@@ -12,7 +12,7 @@ export const Statistics = ({
   return (
     <>
       {good !== 0 || neutral !== 0 || bad !== 0 ? (
-        <ul className={style.list} key={6}>
+        <ul className={style.list}>
           <li>
             <p>Good: {good}</p>
           </li>
