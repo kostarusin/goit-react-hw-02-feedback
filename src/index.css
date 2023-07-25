@@ -18,6 +18,11 @@ code {
   padding: 20px;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
 
 .buttonWrap {
   display: flex;
@@ -27,6 +32,7 @@ code {
 
 .button {
   width: 116px;
+  text-transform: capitalize;
 }
 
 .notificationMsg {

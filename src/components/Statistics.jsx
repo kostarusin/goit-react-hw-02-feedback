@@ -4,13 +4,13 @@ import { Notification } from './Notification';
 export const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
 return(<>
         {good !== 0 || neutral !== 0 || bad !== 0 ? (
-            <div className="statistics" key={6}>
-              <p>Good: {good}</p>
-              <p>Neutral: {neutral}</p>
-              <p>Bad: {bad}</p>
-              <p>Total: {total}</p>
-              <p>Positive feedback: {positivePercentage}%</p>
-            </div>
+            <ul className="statistics" key={6}>
+              <li><p>Good: {good}</p></li>
+              <li><p>Neutral: {neutral}</p></li>
+              <li><p>Bad: {bad}</p></li>
+              <li><p>Total: {total}</p></li>
+              <li><p>Positive feedback: {positivePercentage}%</p></li>
+            </ul>
           ) : (<Notification message="There is no feedback" />) }
         
     </>)
